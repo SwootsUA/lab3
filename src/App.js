@@ -10,27 +10,40 @@ class App extends Component {
         push me
       </button>
       <p>{this.state.id}</p>
+
+      <button className = 'button green' onClick = {this.handleClick2}>
+        see date
+      </button>
+      <p>{this.state.created_at}</p>
     </div>
     )
   }
 
-  handleClick() {
-    //console.log('done!');  
+  handleClick() {  
     axios.get('https://api.github.com/users/maecapozzi')
-    //.then(response => console.log(response);
     .then(response => this.setState({
       id:response.data.id
     }))
+  }
+
+  handleClick2() { 
+    axios.get('https://api.github.com/users/maecapozzi')
+    .then(response => this.setState({
+      created_at:response.data.created_at
+    }))
+    
   }
 
   constructor() {
     super();
 
     this.state = {
-      id: ''
+      id: '',
+      created_at: ''
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 }
 
