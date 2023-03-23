@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.button_container {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #ffcccb;
+}
+
+.button {
+  margin-top: 200px;
+  background-color: red;
+  border: none;
+  color: black;
+  font-size: 48px;
+  height: 180px;
+  width: 220px;
+}
